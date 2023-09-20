@@ -181,7 +181,7 @@ const RentzGameFinished = ({ total, exit, reset }) => {
                 {podium.map((p, index) => {
                   if (index < 3) {
                     return (
-                      <div style={{display: 'flex', flexDirection: 'column', height: '100%'}}>
+                      <div key={'podium' + index} style={{display: 'flex', flexDirection: 'column', height: '100%'}}>
                         <Names>
                           {groupedRanks[p.index] && <span>({groupedRanks[p.index][0].score})</span>}
                           {groupedRanks[p.index] && groupedRanks[p.index].map(r => <span><b>{r.name}</b></span>)}
@@ -198,7 +198,7 @@ const RentzGameFinished = ({ total, exit, reset }) => {
 
                     return (
                       <div style={{ ...p, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'end', marginLeft: 'auto', fontSize: '10px' }}>
-                        {shitPlayers.map(p => <span style={{fontWeight: 500}}>{p.name} ({p.score})</span>)}
+                        {shitPlayers.map(p => <span key={'poop'+ p.name} style={{fontWeight: 500}}>{p.name} ({p.score})</span>)}
                         {p.image && <img src={p.image} alt='poop' style={{ width: '60%' }} />}
                       </div>
                     )

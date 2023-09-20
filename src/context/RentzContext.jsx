@@ -85,7 +85,7 @@ const RentzContextProvider = ({ children }) => {
     localStorage.setItem('rentzGameHistory', JSON.stringify([]));
     setGameHistory([]);
 
-    window.location.href = '/rentz';
+    window.location.href = '/scorer/rentz';
   }
 
   const reset = () => {

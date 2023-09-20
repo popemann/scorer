@@ -135,10 +135,10 @@ const Header = () => {
 
   return (
     <>
-      <HomeIconStyled width='30px' height='30px' onClick={() => onClickLink('/')} />
-      {path.includes('rentz') &&
+      <HomeIconStyled width='30px' height='30px' onClick={() => onClickLink('/scorer')} />
+      {path.includes('scorer/rentz') &&
         <RightIcons>
-          {path.includes('rentz/game-in-progress') &&
+          {path.includes('scorer/rentz/game-in-progress') &&
             <UndoIcon isDisabled={isFirstRound} width='30px' height='30px' onClick={() => !isFirstRound && undoRound()} />
           }
           <Menu>
@@ -153,7 +153,7 @@ const Header = () => {
               <MenuItem onClick={() => setViewRules(true)} icon={<RulesIcon width='22px' height='22px' />}>
                 Regulament
               </MenuItem>
-              {path.includes('rentz/game-in-progress') &&
+              {path.includes('scorer/rentz/game-in-progress') &&
                 <>
                   <MenuItem onClick={() => setViewCards(true)} icon={<CardsIcon width='32px' height='32px' />}>
                     Carti in joc

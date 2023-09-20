@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react';
 import { RentzContextProvider } from './context/RentzContext';
 import RentzInProgress from './RentzInProgress';
 import Header from './Header';
+import { onClickLink } from './utils/redirect';
 
 
 const { Button, Input, Modal, Checkbox, Menu } = chakraTheme.components
@@ -37,16 +38,27 @@ function App() {
     };
   });
 
+  useEffect(() => {
+    console.log('currentpatg', currentPath);
+    if (currentPath !== '/scorer'
+        && currentPath !== '/scorer/whist'
+        && currentPath !== '/scorer/rentz'
+        && currentPath !== '/scorer/rentz/game-in-progress'
+    ) {
+      onClickLink('/scorer');
+    }
+  }, [currentPath])
+
 
   return (
     <ChakraProvider theme={theme}>
       <div>
         <RentzContextProvider>
           <Header />
-          <Route path='/' currentPath={currentPath} component={<Dashboard />} />
-          <Route path='/whist' currentPath={currentPath} component={<WhistStartForm />} />
-          <Route path='/rentz' currentPath={currentPath} component={<RentzStartForm />} />
-          <Route path='/rentz/game-in-progress' currentPath={currentPath} component={<RentzInProgress />} />
+          <Route path='/scorer' currentPath={currentPath} component={<Dashboard />} />
+          <Route path='/scorer/whist' currentPath={currentPath} component={<WhistStartForm />} />
+          <Route path='/scorer/rentz' currentPath={currentPath} component={<RentzStartForm />} />
+          <Route path='/scorer/rentz/game-in-progress' currentPath={currentPath} component={<RentzInProgress />} />
         </RentzContextProvider>
       </div>
     </ChakraProvider>

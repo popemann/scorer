@@ -291,7 +291,7 @@ const RentzStartForm = () => {
       points: [...points],
     });
 
-    onClickLink('rentz/game-in-progress');
+    onClickLink('/scorer/rentz/game-in-progress');
   }
 
   const isInvalid = isFormInvalid(players, points);
@@ -435,7 +435,7 @@ const RentzStartForm = () => {
               <StyledButton onClick={exit}>
                 Joc nou
               </StyledButton>
-              <StyledButton onClick={() => onClickLink('rentz/game-in-progress')}>
+              <StyledButton onClick={() => onClickLink('/scorer/rentz/game-in-progress')}>
                 Continua
               </StyledButton>
             </ModalFooterStyled>

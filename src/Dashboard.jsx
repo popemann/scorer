@@ -132,14 +132,14 @@ const Dashboard = () => {
       <Title className="title">Let's play !!!</Title>
 
       <Subtitle>Ce ne jucam?</Subtitle>
-      <WhistButton onClick={() => onClickLink('whist')}>
+      <WhistButton onClick={() => onClickLink('/scorer/whist')}>
         <SpadesIcon height={'30px'} width={'30px'} />
         <HeartsIcon height={'30px'} width={'30px'} />
         <span>Whist</span>
         <DiamondsIcon height={'30px'} width={'30px'} />
         <ClubsIcon height={'30px'} width={'30px'} />
       </WhistButton>
-      <RentzButton onClick={() => onClickLink('rentz')}>
+      <RentzButton onClick={() => onClickLink('/scorer/rentz')}>
         <PokerCard cardType='K' width={40} cardColor={CARD_COLORS.HEARTS}/>
           <span>Rentz</span>
         <PokerCard cardType='10' width={40} cardColor={CARD_COLORS.CLUBS}/>
