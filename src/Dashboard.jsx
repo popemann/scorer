@@ -1,0 +1,151 @@
+import { keyframes, styled } from "styled-components";
+import { colors } from "./style/colors";
+import { SpadesIcon } from "./icons/spades";
+import { HeartsIcon } from "./icons/hearts";
+import { ClubsIcon } from "./icons/clubs";
+import { DiamondsIcon } from "./icons/diamonds";
+import { PokerCard } from "./components/PokerCard";
+import { CARD_COLORS } from "./helpers/constants";
+import { onClickLink } from "./utils/redirect";
+
+const DashboardContainer = styled.div`
+  width: 80vw;
+  height: 90vh;
+  margin: auto;
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
+const wiggle = keyframes`
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  30% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  40% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  50% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  60% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  70% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  80% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  90% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+  100% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+`;
+
+const pulse = keyframes`
+  0% {
+    transform: scale(0.96, 0.96);
+  }
+  50% {
+    transform: scale(1.04, 1.04);
+  }
+  100% {
+    transform: scale(0.96, 0.96);
+  }
+`
+
+const reversePulse = keyframes`
+  0% {
+    transform: scale(1.04, 1.04);
+  }
+  50% {
+    transform: scale(0.96, 0.96);
+  }
+  100% {
+    transform: scale(1.04, 1.04);
+  }
+`
+
+const Title = styled.h1`
+  font-family: 'Rocher', 'Comic Sans MS', Roboto, Helvetica, sans-serif;
+  font-size: 50px;
+  animation: ${wiggle} 3s;
+  animation-iteration-count: infinite;
+`
+
+const Subtitle = styled.h2`
+  font-size: 30px;
+  margin-top: 5rem;
+  font-weight: 700;
+  color: purple;
+`
+
+const WhistButton = styled.div`
+  width: 90%;
+  height: 100px;
+  border: 3px solid ${colors.red};
+  background: ${colors.red}30;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: 600;
+  animation: ${pulse} 2s infinite;
+  box-shadow: 2px 4px 10px -1px black;
+
+  & > span {
+    margin: 10px;
+  }
+`
+
+const RentzButton = styled.div`
+  position: relative;
+  width: 90%;
+  height: 100px;
+  border: 3px solid ${colors.blue};
+  background: ${colors.blue}30;
+  border-radius: 10px;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: 600;
+  animation: ${reversePulse} 2s infinite;
+  box-shadow: 2px 4px 10px -1px black;
+
+  & > span {
+    margin: 20px;
+  }
+`
+
+const Dashboard = () => {
+  return (
+    <DashboardContainer>
+      <Title className="title">Let's play !!!</Title>
+
+      <Subtitle>Ce ne jucam?</Subtitle>
+      <WhistButton onClick={() => onClickLink('whist')}>
+        <SpadesIcon height={'30px'} width={'30px'} />
+        <HeartsIcon height={'30px'} width={'30px'} />
+        <span>Whist</span>
+        <DiamondsIcon height={'30px'} width={'30px'} />
+        <ClubsIcon height={'30px'} width={'30px'} />
+      </WhistButton>
+      <RentzButton onClick={() => onClickLink('rentz')}>
+        <PokerCard cardType='K' width={40} cardColor={CARD_COLORS.HEARTS}/>
+          <span>Rentz</span>
+        <PokerCard cardType='10' width={40} cardColor={CARD_COLORS.CLUBS}/>
+      </RentzButton>
+    </DashboardContainer>
+  );
+}
+
+export default Dashboard;

@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+  font-family: 'Comic Sans MS', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+code {
+  font-family: 'Comic Sans MS', 'Roboto', source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@font-face {
+  font-family: 'Rocher';
+  src: url(https://assets.codepen.io/9632/RocherColorGX.woff2);
+}
+
+@font-palette-values --Purples {
+  font-family: 'Rocher';
+  base-palette: 6;
+}
+
+.title {
+  font-palette: --Purples;
+}
+
+#root {
+  position:relative;
+  z-index: 1;
+  min-height: 100vh;
+  padding-bottom: 1px;
+}
+
+#root::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  min-height: 100vh;
+  background-image: url(./assests/shapes-bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
