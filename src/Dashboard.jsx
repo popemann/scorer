@@ -10,12 +10,12 @@ import { onClickLink } from "./utils/redirect";
 
 const DashboardContainer = styled.div`
   width: 80vw;
-  height: 90vh;
+  height: 100vh;
   margin: auto;
-  padding-top: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 `
 
 const wiggle = keyframes`
@@ -77,11 +77,12 @@ const Title = styled.h1`
   font-size: 45px;
   animation: ${wiggle} 3s;
   animation-iteration-count: infinite;
+  margin-bottom: 50px;
 `
 
 const WhistButton = styled.div`
-  width: 90%;
-  height: 100px;
+  width: 300px;
+  height: 90px;
   border: 3px solid ${colors.red};
   background: ${colors.red}30;
   border-radius: 10px;
@@ -100,8 +101,8 @@ const WhistButton = styled.div`
 
 const RentzButton = styled.div`
   position: relative;
-  width: 90%;
-  height: 100px;
+  width: 300px;
+  height: 90px;
   border: 3px solid ${colors.blue};
   background: ${colors.blue}30;
   border-radius: 10px;
@@ -121,23 +122,25 @@ const RentzButton = styled.div`
 
 const Dashboard = () => {
   return (
-    <DashboardContainer>
-      <Title className="title">Let's play !!!</Title>
+    <>
+      <DashboardContainer>
+        <Title className="title">Let's play !!!</Title>
 
-      <p>version 1.0.3</p>
-      <WhistButton onClick={() => onClickLink('/scorer/whist')}>
-        <SpadesIcon height={'30px'} width={'30px'} />
-        <HeartsIcon height={'30px'} width={'30px'} />
-        <span>Whist</span>
-        <DiamondsIcon height={'30px'} width={'30px'} />
-        <ClubsIcon height={'30px'} width={'30px'} />
-      </WhistButton>
-      <RentzButton onClick={() => onClickLink('/scorer/rentz')}>
-        <PokerCard cardType='K' width={40} cardColor={CARD_COLORS.HEARTS}/>
+        <WhistButton onClick={() => onClickLink('/scorer/whist')}>
+          <SpadesIcon height={'30px'} width={'30px'} />
+          <HeartsIcon height={'30px'} width={'30px'} />
+          <span>Whist</span>
+          <DiamondsIcon height={'30px'} width={'30px'} />
+          <ClubsIcon height={'30px'} width={'30px'} />
+        </WhistButton>
+        <RentzButton onClick={() => onClickLink('/scorer/rentz')}>
+          <PokerCard cardType='K' width={40} cardColor={CARD_COLORS.HEARTS} />
           <span>Rentz</span>
-        <PokerCard cardType='10' width={40} cardColor={CARD_COLORS.CLUBS}/>
-      </RentzButton>
-    </DashboardContainer>
+          <PokerCard cardType='10' width={40} cardColor={CARD_COLORS.CLUBS} />
+        </RentzButton>
+      </DashboardContainer>
+      <p style={{ position: 'absolute', bottom: 0 }}>version 1.0.3</p>
+    </>
   );
 }
 

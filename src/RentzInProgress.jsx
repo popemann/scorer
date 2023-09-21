@@ -19,11 +19,11 @@ const Container = styled.div`
   padding-left: 5vw;
   padding-right: 5vw;
   padding-bottom: 15px;
-  height: 100vh;
+  height: 100dvh;
 `
 
 const TableContainer = styled.div`
-  max-height: calc(100vh - 120px);
+  max-height: calc(100dvh - 120px);
   position: relative;
   overflow: scroll;
   border-radius: 10px;

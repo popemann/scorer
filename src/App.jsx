@@ -39,7 +39,6 @@ function App() {
   });
 
   useEffect(() => {
-    console.log('currentpatg', currentPath);
     if (currentPath !== '/scorer'
         && currentPath !== '/scorer/whist'
         && currentPath !== '/scorer/rentz'

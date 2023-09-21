@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from "react";
+import { onClickLink } from "../utils/redirect";
 
 const RentzContext = createContext({});
 
@@ -85,7 +86,7 @@ const RentzContextProvider = ({ children }) => {
     localStorage.setItem('rentzGameHistory', JSON.stringify([]));
     setGameHistory([]);
 
-    window.location.href = '/scorer/rentz';
+    onClickLink('/scorer/rentz')
   }
 
   const reset = () => {
