@@ -74,16 +74,9 @@ const reversePulse = keyframes`
 
 const Title = styled.h1`
   font-family: 'Rocher', 'Comic Sans MS', Roboto, Helvetica, sans-serif;
-  font-size: 50px;
+  font-size: 45px;
   animation: ${wiggle} 3s;
   animation-iteration-count: infinite;
-`
-
-const Subtitle = styled.h2`
-  font-size: 30px;
-  margin-top: 5rem;
-  font-weight: 700;
-  color: purple;
 `
 
 const WhistButton = styled.div`
@@ -131,7 +124,7 @@ const Dashboard = () => {
     <DashboardContainer>
       <Title className="title">Let's play !!!</Title>
 
-      <Subtitle>Ce ne jucam?</Subtitle>
+      <p>version 1.0.3</p>
       <WhistButton onClick={() => onClickLink('/scorer/whist')}>
         <SpadesIcon height={'30px'} width={'30px'} />
         <HeartsIcon height={'30px'} width={'30px'} />
