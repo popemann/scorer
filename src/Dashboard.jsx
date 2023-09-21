@@ -139,7 +139,7 @@ const Dashboard = () => {
           <PokerCard cardType='10' width={40} cardColor={CARD_COLORS.CLUBS} />
         </RentzButton>
       </DashboardContainer>
-      <p style={{ position: 'absolute', bottom: 0 }}>version 1.0.3</p>
+      <p style={{ position: 'absolute', bottom: 0 }}>version 1.0.4</p>
     </>
   );
 }

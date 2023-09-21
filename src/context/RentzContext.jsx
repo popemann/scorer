@@ -86,7 +86,7 @@ const RentzContextProvider = ({ children }) => {
     localStorage.setItem('rentzGameHistory', JSON.stringify([]));
     setGameHistory([]);
 
-    onClickLink('/scorer/rentz')
+    onClickLink('/scorer/rentz');
   }
 
   const reset = () => {

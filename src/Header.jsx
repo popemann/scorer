@@ -286,10 +286,10 @@ const Header = () => {
 
             <ModalFooter>
               <CloseButtonExit variant='outline' colorScheme='red' onClick={() => setViewExit(false)}>
-                Inchide
-              </CloseButtonExit>
-              <Exit onClick={() => exit()}>
                 Renunta
+              </CloseButtonExit>
+              <Exit onClick={() => {setViewExit(false); exit()}}>
+                Da
               </Exit>
             </ModalFooter>
           </StyledContentModal>
